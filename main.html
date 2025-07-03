@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Portfolio Website Design</title>
+    <link rel="stylesheet" href="style.css">
+    <!----Font awesome cdn  font icon css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+     <div class="hero-header">
+        <div class="wrapper">
+            <header>
+                <div class="logo">
+                    <i class="fa-solid fa-d"></i>
+                    <div class="logo-text">Darren Kyon</div>
+                </div>
+                <nav>
+                    <div class="togglebtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="navlinks">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Resume</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="container">
+                 <div class="hero-pic">
+                    <img src="images/imageprifle.jpg" alt="profile pic">
+                 </div>
+                 <div class="hero-text">
+                    <h5>Hi I'm <span class="input"></span></h5>
+                    <h1>Darren Kyon</h1>
+                    <p> I currently study at the University Putra Malaysia Sarawak, pursuing in Diploma Science Computer. I major in Multimedia.
+                        I had more than 2 years of experience in video editing and graphic design. With the help the skills that I learned combining it
+                        with management skills, I am be able to do my best to fullfill your needs!
+                         
+
+                    </p>
+
+                    <div class="btn-group">
+                       <a href="#" class="btn active">Download CV</a>
+                       <a href="#" class="btn">Contact</a>
+                    </div>
+
+                    <div class="social">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                    </div>
+                 </div>
+            </div>
+        </div>
+     </div>
+     <!---typed js for typing text effect-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+    <script>
+        /** creating button click show hide navbar **/
+        var togglebtn = document.querySelector(".togglebtn");
+        var nav = document.querySelector(".navlinks");
+        var links = document.querySelector(".navlinks li");
+
+        togglebtn.addEventListener("click", function () {
+            this.classList.toggle("click");
+            nav.classList.toggle("open");
+        })
+
+        var typed = new Typed(".input", {
+            strings: ["OK", "Good", "Fine Thank you"],
+            typeSpeed: 30,
+            backSpeed: 95,
+            loop: true
+        })
+    </script>
+    <script>
+        // Linking Download CV button
+        document.querySelector('.btn-group .btn.active').setAttribute('href', 'Resume.pdf');
+        document.querySelector('.btn-group .btn.active').setAttribute('download', '');
+
+        // Linking Contact button (e.g., email)
+        document.querySelector('.btn-group .btn:not(.active)').setAttribute('href', 'mailto:darrenkyon5@gmail.com');
+
+        // Linking social icons
+        var socialLinks = document.querySelectorAll('.social a');
+        socialLinks[0].setAttribute('href', 'https://www.facebook.com/share/1GDDKcUVEq/?mibextid=wwXIfr');
+        socialLinks[1].setAttribute('href', 'https://www.instagram.com/xerc89898989?igsh=MW1yN3Q2bG9yZ3Vhdw%3D%3D&utm_source=qr');
+        socialLinks[2].setAttribute('href', 'https://pin.it/1OFKj4B6j');
+    </script>
+</body>
+</html>
